@@ -6,7 +6,11 @@ const Navber = () => {
     <div className="navbar bg-base-100 shadow-sm mulish max-w-6xl mx-auto py-7">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div
+            tabIndex={0}
+            role="button"
+            className=" cursor-pointer mr-3 lg:hidden"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -27,30 +31,48 @@ const Navber = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <a>Item 1</a>
+            <li className="">
+              <NavLink
+                to={"/"}
+                className={({ isActive }) =>
+                  isActive ? "text-green-500 font-medium" : ""
+                }
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+              <NavLink
+                to={"/jobs"}
+                className={({ isActive }) =>
+                  isActive ? "text-green-500 font-medium" : ""
+                }
+              >
+                Jobs
+              </NavLink>
             </li>
+
             <li>
-              <a>Item 3</a>
+              <NavLink
+                to={"/contact"}
+                className={({ isActive }) =>
+                  isActive ? "text-green-500 font-medium" : ""
+                }
+              >
+                Contact Us
+              </NavLink>
             </li>
           </ul>
         </div>
         <div className="flex items-center gap-1 ">
-          <img className="w-16 h-16" src="sticker.webp" alt="" />
+          <img
+            className="w-10 h-10 lg:w-16 lg:h-16"
+            src="sticker.webp"
+            alt=""
+          />
           <NavLink
             to={"/"}
-            className="cursor-pointer text-[32px] text-black font-medium"
+            className="cursor-pointer text-base lg:text-[32px] text-black font-medium"
           >
             JobTrack
           </NavLink>
@@ -91,7 +113,7 @@ const Navber = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end mulish sm:gap-2 lg:gap-6">
+      <div className="navbar-end mulish gap-2 lg:gap-6">
         {/* Sign IN Button */}
         <button className="cursor-pointer relative inline-flex items-center justify-center p-4 px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group">
           <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease">

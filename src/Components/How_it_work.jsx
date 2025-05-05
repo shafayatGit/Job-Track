@@ -8,7 +8,7 @@ const How_it_work = () => {
           <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             How It Works
           </h2>
-          <p class="text-gray-600 max-w-xl mx-auto mb-12">
+          <p class="text-gray-600  mx-auto mb-12">
             Find your dream job in just a few easy steps. Our platform makes the
             job search and application process simple and efficient.
           </p>
