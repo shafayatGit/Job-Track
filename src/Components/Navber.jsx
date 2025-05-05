@@ -1,0 +1,147 @@
+import React from "react";
+import { NavLink } from "react-router";
+
+const Navber = () => {
+  return (
+    <div className="navbar bg-base-100 shadow-sm mulish max-w-6xl mx-auto py-7">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              {" "}
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />{" "}
+            </svg>
+          </div>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+          >
+            <li>
+              <a>Item 1</a>
+            </li>
+            <li>
+              <a>Parent</a>
+              <ul className="p-2">
+                <li>
+                  <a>Submenu 1</a>
+                </li>
+                <li>
+                  <a>Submenu 2</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a>Item 3</a>
+            </li>
+          </ul>
+        </div>
+        <div className="flex items-center gap-1 ">
+          <img className="w-16 h-16" src="sticker.webp" alt="" />
+          <NavLink
+            to={"/"}
+            className="cursor-pointer text-[32px] text-black font-medium"
+          >
+            JobTrack
+          </NavLink>
+        </div>
+      </div>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1 text-[18px] text-black font-light">
+          <li className="">
+            <NavLink
+              to={"/"}
+              className={({ isActive }) =>
+                isActive ? "text-green-500 font-medium" : ""
+              }
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={"/jobs"}
+              className={({ isActive }) =>
+                isActive ? "text-green-500 font-medium" : ""
+              }
+            >
+              Jobs
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to={"/contact"}
+              className={({ isActive }) =>
+                isActive ? "text-green-500 font-medium" : ""
+              }
+            >
+              Contact Us
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+      <div className="navbar-end mulish sm:gap-2 lg:gap-6">
+        {/* Sign IN Button */}
+        <button className="cursor-pointer relative inline-flex items-center justify-center p-4 px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group">
+          <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              ></path>
+            </svg>
+          </span>
+          <span className="absolute flex items-center justify-center w-full h-full text-white font-medium transition-all duration-300 transform group-hover:translate-x-full ease bg-linear-65 from-blue-700 to-pink-600">
+            Login
+          </span>
+          <span className="relative invisible">Login</span>
+        </button>
+
+        {/* Register Btn */}
+        <button className="cursor-pointer relative inline-flex items-center justify-center p-4 px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group">
+          <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              ></path>
+            </svg>
+          </span>
+          <span className="absolute flex items-center justify-center w-full h-full text-white font-medium transition-all duration-300 transform group-hover:translate-x-full ease bg-linear-65 from-blue-700 to-pink-600">
+            Register
+          </span>
+          <span className="relative invisible">Register</span>
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Navber;
