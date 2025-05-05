@@ -1,0 +1,315 @@
+[
+    {
+      "id": "1",
+      "name": "TechNova",
+      "logo": "https://example.com/logos/technova.png",
+      "location": "San Francisco, CA",
+      "website": "https://technova.com",
+      "industry": "Software Development",
+      "jobs": [
+        {
+          "id": "job-001",
+          "title": "Frontend Developer",
+          "bannerImage": "https://example.com/banners/frontend.jpg",
+          "location": "Remote",
+          "salary": "$70,000 - $90,000",
+          "jobType": "Full-time",
+          "description": "We are looking for a skilled Frontend Developer.",
+          "requirements": [
+            "Proficient in HTML, CSS, and JavaScript",
+            "Experience with React or Vue.js",
+            "Familiarity with RESTful APIs",
+            "Good understanding of responsive design",
+            "Excellent problem-solving skills"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "InnoSoft",
+      "logo": "https://example.com/logos/innosoft.png",
+      "location": "New York, NY",
+      "website": "https://innosoft.com",
+      "industry": "IT Services",
+      "jobs": [
+        {
+          "id": "job-002",
+          "title": "Backend Developer",
+          "bannerImage": "https://example.com/banners/backend.jpg",
+          "location": "On-site",
+          "salary": "$80,000 - $100,000",
+          "jobType": "Full-time",
+          "description": "Join our backend team to build scalable APIs.",
+          "requirements": [
+            "Strong knowledge of Node.js or Python",
+            "Experience with databases (SQL, MongoDB)",
+            "REST and GraphQL experience",
+            "Unit testing and CI/CD familiarity",
+            "Problem-solving and team collaboration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "CloudCore",
+      "logo": "https://example.com/logos/cloudcore.png",
+      "location": "Austin, TX",
+      "website": "https://cloudcore.io",
+      "industry": "Cloud Computing",
+      "jobs": [
+        {
+          "id": "job-003",
+          "title": "DevOps Engineer",
+          "bannerImage": "https://example.com/banners/devops.jpg",
+          "location": "Remote",
+          "salary": "$90,000 - $110,000",
+          "jobType": "Full-time",
+          "description": "Automate deployments and maintain CI/CD pipelines.",
+          "requirements": [
+            "Experience with AWS, Docker, Kubernetes",
+            "CI/CD tools like Jenkins or GitHub Actions",
+            "Infrastructure as code (Terraform, Ansible)",
+            "Monitoring tools like Prometheus, Grafana",
+            "Excellent scripting skills"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "DataWave",
+      "logo": "https://example.com/logos/datawave.png",
+      "location": "Chicago, IL",
+      "website": "https://datawave.ai",
+      "industry": "AI & Data Science",
+      "jobs": [
+        {
+          "id": "job-004",
+          "title": "Data Scientist",
+          "bannerImage": "https://example.com/banners/data.jpg",
+          "location": "Hybrid",
+          "salary": "$100,000 - $130,000",
+          "jobType": "Full-time",
+          "description": "Analyze data and build machine learning models.",
+          "requirements": [
+            "Strong Python and SQL skills",
+            "Experience with ML frameworks (TensorFlow, scikit-learn)",
+            "Statistical analysis and data visualization",
+            "Big data tools (Spark, Hadoop) a plus",
+            "Strong communication and storytelling skills"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "CyberFort",
+      "logo": "https://example.com/logos/cyberfort.png",
+      "location": "Boston, MA",
+      "website": "https://cyberfort.com",
+      "industry": "Cybersecurity",
+      "jobs": [
+        {
+          "id": "job-005",
+          "title": "Security Analyst",
+          "bannerImage": "https://example.com/banners/security.jpg",
+          "location": "On-site",
+          "salary": "$85,000 - $105,000",
+          "jobType": "Full-time",
+          "description": "Monitor and defend our network infrastructure.",
+          "requirements": [
+            "Knowledge of firewalls, IDS/IPS, SIEM",
+            "Experience with penetration testing",
+            "Familiarity with NIST, ISO standards",
+            "Scripting with Python or Bash",
+            "Strong analytical skills"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "MobilityX",
+      "logo": "https://example.com/logos/mobilityx.png",
+      "location": "Seattle, WA",
+      "website": "https://mobilityx.app",
+      "industry": "Mobile App Development",
+      "jobs": [
+        {
+          "id": "job-006",
+          "title": "iOS Developer",
+          "bannerImage": "https://example.com/banners/ios.jpg",
+          "location": "Remote",
+          "salary": "$90,000 - $120,000",
+          "jobType": "Full-time",
+          "description": "Develop cutting-edge mobile applications for iOS.",
+          "requirements": [
+            "Proficient in Swift and Xcode",
+            "Familiarity with MVVM architecture",
+            "Experience with RESTful APIs",
+            "App Store deployment knowledge",
+            "UX-focused development mindset"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "NextGenVR",
+      "logo": "https://example.com/logos/nextgenvr.png",
+      "location": "Los Angeles, CA",
+      "website": "https://nextgenvr.com",
+      "industry": "Virtual Reality",
+      "jobs": [
+        {
+          "id": "job-007",
+          "title": "Unity Developer",
+          "bannerImage": "https://example.com/banners/unity.jpg",
+          "location": "Hybrid",
+          "salary": "$80,000 - $110,000",
+          "jobType": "Full-time",
+          "description": "Create immersive VR experiences with Unity.",
+          "requirements": [
+            "Unity and C# expertise",
+            "Experience in VR/AR development",
+            "3D optimization techniques",
+            "Familiarity with Oculus/HTC SDKs",
+            "Creative problem-solving"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "AutoML Labs",
+      "logo": "https://example.com/logos/automl.png",
+      "location": "Denver, CO",
+      "website": "https://automllabs.com",
+      "industry": "Machine Learning",
+      "jobs": [
+        {
+          "id": "job-008",
+          "title": "ML Engineer",
+          "bannerImage": "https://example.com/banners/mlengineer.jpg",
+          "location": "Remote",
+          "salary": "$110,000 - $140,000",
+          "jobType": "Full-time",
+          "description": "Design and deploy ML pipelines in production.",
+          "requirements": [
+            "Strong Python skills and ML libraries",
+            "Data pipeline tools (Airflow, MLflow)",
+            "Cloud experience (AWS/GCP/Azure)",
+            "Model optimization and deployment",
+            "Team collaboration and agile workflows"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "GreenTech",
+      "logo": "https://example.com/logos/greentech.png",
+      "location": "Portland, OR",
+      "website": "https://greentech.org",
+      "industry": "Environmental Tech",
+      "jobs": [
+        {
+          "id": "job-009",
+          "title": "Full Stack Developer",
+          "bannerImage": "https://example.com/banners/fullstack.jpg",
+          "location": "On-site",
+          "salary": "$85,000 - $115,000",
+          "jobType": "Full-time",
+          "description": "Develop web solutions to help the environment.",
+          "requirements": [
+            "JavaScript, React, and Node.js",
+            "Experience with PostgreSQL or MongoDB",
+            "RESTful API development",
+            "Version control using Git",
+            "Passion for sustainable tech"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "EduCraft",
+      "logo": "https://example.com/logos/educraft.png",
+      "location": "Atlanta, GA",
+      "website": "https://educraft.io",
+      "industry": "EdTech",
+      "jobs": [
+        {
+          "id": "job-010",
+          "title": "UI/UX Designer",
+          "bannerImage": "https://example.com/banners/uiux.jpg",
+          "location": "Remote",
+          "salary": "$75,000 - $95,000",
+          "jobType": "Full-time",
+          "description": "Design engaging interfaces for educational apps.",
+          "requirements": [
+            "Proficiency in Figma/Adobe XD",
+            "Strong visual and interaction design skills",
+            "User research experience",
+            "Design systems knowledge",
+            "Excellent communication skills"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "QuantumSoft",
+      "logo": "https://example.com/logos/quantumsoft.png",
+      "location": "Toronto, Canada",
+      "website": "https://quantumsoft.ca",
+      "industry": "Quantum Computing",
+      "jobs": [
+        {
+          "id": "job-011",
+          "title": "Quantum Researcher",
+          "bannerImage": "https://example.com/banners/quantum.jpg",
+          "location": "Hybrid",
+          "salary": "$120,000 - $160,000",
+          "jobType": "Full-time",
+          "description": "Conduct quantum algorithm research and simulations.",
+          "requirements": [
+            "Background in quantum mechanics",
+            "Python and Qiskit knowledge",
+            "Scientific research and publishing experience",
+            "Mathematical modeling skills",
+            "Team collaboration in R&D"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "SmartChain",
+      "logo": "https://example.com/logos/smartchain.png",
+      "location": "Berlin, Germany",
+      "website": "https://smartchain.io",
+      "industry": "Blockchain",
+      "jobs": [
+        {
+          "id": "job-012",
+          "title": "Blockchain Developer",
+          "bannerImage": "https://example.com/banners/blockchain.jpg",
+          "location": "Remote",
+          "salary": "$95,000 - $125,000",
+          "jobType": "Full-time",
+          "description": "Build smart contracts and decentralized apps.",
+          "requirements": [
+            "Experience with Solidity and Ethereum",
+            "Knowledge of Web3.js and Truffle",
+            "Familiarity with blockchain architecture",
+            "Security practices in smart contract development",
+            "Experience with version control and agile"
+          ]
+        }
+      ]
+    }
+  ]
+  

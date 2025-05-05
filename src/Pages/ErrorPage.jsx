@@ -3,7 +3,7 @@ import Navber from "../Components/Navber";
 
 const ErrorPage = () => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-6xl mx-auto">
       <Navber></Navber>
       <div>
         <img
