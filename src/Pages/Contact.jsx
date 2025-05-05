@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Navber from "../Components/Navber";
-import { FaTwitter } from "react-icons/fa";
+import { FaGithub, FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { toast, ToastContainer } from "react-toastify";
+import { IoIosCheckmarkCircle } from "react-icons/io";
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -22,7 +23,17 @@ function ContactUs() {
     e.preventDefault();
     // You can replace this with an API call
     console.log("Form submitted:", formData);
-    toast("Thank you for reaching out!");
+    toast(
+      <div className="flex items-center gap-2">
+        <IoIosCheckmarkCircle
+          size={25}
+          className="text-green-700"
+        ></IoIosCheckmarkCircle>
+        <p className="text-black mulish font-base text-[18px]">
+          Thank you for reaching out
+        </p>
+      </div>
+    );
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -117,12 +128,15 @@ function ContactUs() {
         <p>
           Follow us on{" "}
           <div className="flex justify-center gap-2 mt-3 mb-18">
-            <a href="#">
+            <a
+              target="blank_"
+              href="https://www.linkedin.com/in/shafayat-hossain-patowary/"
+            >
               <FaLinkedin size={25}></FaLinkedin>
             </a>{" "}
             |{" "}
-            <a href="#">
-              <FaTwitter size={25}></FaTwitter>
+            <a target="blank_" href="https://github.com/shafayatGit">
+              <FaGithub size={25}></FaGithub>
             </a>
           </div>
         </p>
