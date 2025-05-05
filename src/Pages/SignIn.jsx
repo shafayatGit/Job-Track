@@ -1,9 +1,11 @@
 import React from "react";
+import Navber from "../Components/Navber";
 
 const SignIn = () => {
   return (
     <div>
-      <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
+      <Navber></Navber>
+      <div className="mx-auto  mt-10 mb-18 w-full max-w-md p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
         <h2 className="mb-3 text-3xl font-semibold text-center">
           Login to your account
         </h2>

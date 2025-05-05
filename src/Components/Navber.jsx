@@ -1,7 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { NavLink, useLocation, useNavigate } from "react-router";
 
 const Navber = () => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
   return (
     <div className="navbar bg-base-100 shadow-sm mulish max-w-6xl mx-auto py-7">
       <div className="navbar-start">
@@ -115,8 +117,17 @@ const Navber = () => {
       </div>
       <div className="navbar-end mulish gap-2 lg:gap-6">
         {/* Sign IN Button */}
-        <button className="cursor-pointer relative inline-flex items-center justify-center p-4 px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group">
-          <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease">
+        <button
+          onClick={() => navigate("/signin")}
+          className={`cursor-pointer relative inline-flex items-center justify-center p-4 px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group ${
+            pathname == "/signin" ? "text-black" : ""
+          }`}
+        >
+          <span
+            className={`absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease ${
+              pathname == "/signin" ? "text-black" : ""
+            }`}
+          >
             <svg
               className="w-6 h-6"
               fill="none"
@@ -132,14 +143,21 @@ const Navber = () => {
               ></path>
             </svg>
           </span>
-          <span className="absolute flex items-center justify-center w-full h-full text-white font-medium transition-all duration-300 transform group-hover:translate-x-full ease bg-linear-65 from-blue-700 to-pink-600">
+          <span
+            className={`absolute flex items-center justify-center w-full h-full text-white font-medium transition-all duration-300 transform group-hover:translate-x-full ease bg-linear-65 from-blue-700 to-pink-600 ${
+              pathname == "/signin" ? "text-black" : ""
+            }`}
+          >
             Login
           </span>
           <span className="relative invisible">Login</span>
         </button>
 
         {/* Register Btn */}
-        <button className="cursor-pointer relative inline-flex items-center justify-center p-4 px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group">
+        <button
+          onClick={() => navigate("/signup")}
+          className="cursor-pointer relative inline-flex items-center justify-center p-4 px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group"
+        >
           <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease">
             <svg
               className="w-6 h-6"
