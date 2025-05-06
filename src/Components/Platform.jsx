@@ -6,18 +6,16 @@ const Platform = () => {
   const { ref, inView } = useInView();
   return (
     <div>
-      <section className="bg-gray-100 py-20 mulish">
+      <section className=" py-20 mulish">
         <div className="container mx-auto text-center" ref={ref}>
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">
-            Our Impact So Far
-          </h2>
-          <p className="text-gray-600 mb-12">
+          <h2 className="text-4xl font-bold  mb-6">Our Impact So Far</h2>
+          <p className=" mb-12">
             Trusted by professionals and companies across the country.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-gray-800">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 ">
             <div>
-              <div className="mulish text-[#0F0F0F] text-3xl font-bold ">
+              <div className="mulish   text-3xl font-bold ">
                 {inView && (
                   <CountUp
                     start={0}
@@ -28,10 +26,10 @@ const Platform = () => {
                 )}{" "}
                 +
               </div>
-              <p className="mt-2 text-sm text-gray-600">Jobs Posted</p>
+              <p className="mt-2 text-sm ">Jobs Posted</p>
             </div>
             <div>
-              <div className="mulish text-[#0F0F0F] text-3xl font-bold ">
+              <div className="mulish  text-3xl font-bold ">
                 {inView && (
                   <CountUp
                     start={0}
@@ -42,10 +40,10 @@ const Platform = () => {
                 )}{" "}
                 +
               </div>
-              <p className="mt-2 text-sm text-gray-600">Companies</p>
+              <p className="mt-2 text-sm ">Companies</p>
             </div>
             <div>
-              <div className="mulish text-[#0F0F0F] text-3xl font-bold ">
+              <div className="mulish  text-3xl font-bold ">
                 {inView && (
                   <CountUp
                     start={0}
@@ -56,10 +54,10 @@ const Platform = () => {
                 )}{" "}
                 +
               </div>
-              <p className="mt-2 text-sm text-gray-600">Job Seekers</p>
+              <p className="mt-2 text-sm ">Job Seekers</p>
             </div>
             <div>
-              <div className="mulish text-[#0F0F0F] text-3xl font-bold ">
+              <div className="mulish  text-3xl font-bold ">
                 {inView && (
                   <CountUp
                     start={0}
@@ -70,7 +68,7 @@ const Platform = () => {
                 )}{" "}
                 +
               </div>
-              <p className="mt-2 text-sm text-gray-600">Applications Sent</p>
+              <p className="mt-2 text-sm ">Applications Sent</p>
             </div>
           </div>
         </div>

@@ -19,21 +19,19 @@ const CardsDetails = () => {
       <div className=" mt-32 flex items-center justify-center lg:shadow-md hover:lg:shadow-xl hover:scale-[1.02] transition ">
         <div className="h-[400px] px-0 gap-5 lg:gap-22   shadow-sm flex flex-col md:flex-row">
           <img
-            className="md:h-[350px] mx-auto md:w-[350px] block  "
+            className="md:h-[350px] mx-auto md:w-[350px] block rounded-lg "
             src={logo}
             alt=""
           />
 
           <div className=" flex flex-col gap-10">
             <div className=" mt-5 flex flex-col">
-              <h2 className="card-title text-[#0F0F0F] font-extrabold text-2xl">
-                {name}
-              </h2>
+              <h2 className="card-title  font-extrabold text-2xl">{name}</h2>
               <p className=" text-purple-500">{industry}</p>
             </div>
 
             <div className="">
-              <span className="text-black font-bold text-xl ">Title:</span>
+              <span className=" font-bold text-xl ">Title:</span>
               <div className="flex gap-12">
                 {jobs.map((job) => (
                   <div className=" flex flex-col gap-5" key={job.id}>
@@ -41,15 +39,13 @@ const CardsDetails = () => {
                       {job.title}
                     </p>
                     <div className="flex gap-5 items-center">
-                      <p className="text-black font-bold text-xl ">Jobtype:</p>
+                      <p className=" font-bold text-xl ">Jobtype:</p>
                       <p className="text-gray-500 font-medium text-base border border-gray-400 bg-gray-200 rounded-2xl px-5 mt-3">
                         {job.jobType}
                       </p>
                     </div>
                     <div>
-                      <p className="text-black font-bold text-xl">
-                        Salary Range:
-                      </p>
+                      <p className=" font-bold text-xl">Salary Range:</p>
                       <p className="text-gray-500 font-medium text-base border border-gray-400 bg-gray-200 rounded-2xl px-5 mt-3">
                         {job.salary}
                       </p>
@@ -80,28 +76,28 @@ const CardsDetails = () => {
                       </button>
                     </div>
                     {showModal && (
-                      <div className="fixed inset-0 bg-white/30 backdrop-blur-md bg-opacity-100 flex items-center justify-center z-50 ">
-                        <div className="bg-white rounded-xl max-w-md w-full p-6 relative shadow-lg animate-fadeIn">
-                          <div className="flex flex-col gap-4">
+                      <div className="fixed inset-0  backdrop-blur-md bg-opacity-100 flex items-center justify-center z-50 mulish">
+                        <div className=" rounded-xl  max-w-md w-full p-6 relative shadow-lg animate-fadeIn">
+                          <div className="flex flex-col gap-4 bg-gray-300 p-9 rounded-lg mt-10">
                             <div className="flex justify-between items-center">
                               <h3 className="text-2xl font-semibold text-black ">
                                 {job.title}
                               </h3>
-                              <p className="text-gray-500 font-medium text-base border border-gray-400 bg-gray-200 rounded-2xl px-5">
+                              <p className="text-gray-500 font-medium text-base border border-gray-400 rounded-2xl px-2 py-2">
                                 {job.salary}
                               </p>
                             </div>
-                            <p className="text-2xl font-semibold text-black">
+                            <p className="text-black text-2xl font-semibold mb-3 mt-2">
                               Requirements:
                               {job.requirements.map((req) => (
-                                <p className="text-base text-gray-700 font-normal">
+                                <p className="text-gray-500 text-base mb-2 font-normal">
                                   {req}
                                 </p>
                               ))}
                             </p>
                             <p className="text-black font-bold text-xl mr-2">
                               Location:{" "}
-                              <span className="text-gray-500 font-medium text-base border border-gray-400 bg-gray-200 rounded-2xl px-5">
+                              <span className="text-gray-500  font-medium text-base border border-gray-400  rounded-2xl px-5 py-2">
                                 {job.location}
                               </span>{" "}
                             </p>

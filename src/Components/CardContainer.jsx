@@ -7,10 +7,8 @@ const CardContainer = ({ data }) => {
   return (
     <div id="cards_container" className="mulish mt-32 mb-32">
       <div className="text-center">
-        <h2 class="text-4xl font-bold text-gray-800 mb-4">
-          All Available Companies
-        </h2>
-        <p class="text-gray-600 mb-8">
+        <h2 class="text-4xl font-bold mb-4">All Available Companies</h2>
+        <p class=" mb-8">
           Discover top-rated companies hiring now. Learn more about their
           culture, open roles, and what makes them great places to work.
         </p>

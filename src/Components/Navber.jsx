@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, useLocation, useNavigate } from "react-router";
+import ThemeToggle from "./ThemeToggle";
 
 const Navber = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const Navber = () => {
     });
   };
   return (
-    <div className="navbar bg-white shadow-sm mulish max-w-6xl mx-auto py-7">
+    <div className="navbar shadow-sm mulish max-w-6xl mx-auto py-7">
       <div className="navbar-start">
         <div className="dropdown">
           <div
@@ -80,14 +81,15 @@ const Navber = () => {
           />
           <NavLink
             to={"/"}
-            className="cursor-pointer text-base lg:text-[32px] text-black font-medium"
+            className="cursor-pointer text-transparent text-base lg:text-4xl bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500 font-semibold"
           >
             JobTrack
           </NavLink>
+          <ThemeToggle></ThemeToggle>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-[18px] text-black font-light">
+        <ul className="menu menu-horizontal px-1 text-[18px]  font-light">
           <li className="">
             <NavLink
               to={"/"}

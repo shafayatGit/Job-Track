@@ -25,34 +25,6 @@ const SignIn = () => {
         </p>
       </div>
     );
-
-    // if (password.length < 6) {
-    //   alert("pass must be 6 or greater than 6 digit");
-    //   return;
-    // }
-    // if (password !== confirmPassword) {
-    //   alert("password must be matched with confirmed pass");
-    //   return;
-    // }
-    // if (!/[a-z]/.test(password)) {
-    //   alert("pass must be contain a lowercase letter");
-    //   return;
-    // }
-    // if (!/[A-Z]/.test(password)) {
-    //   alert("pass must be contain a uppercase letter");
-    //   return;
-    // }
-    // if (!/\d/.test(password)) {
-    //   alert("pass must be contain a number");
-    //   return;
-    // }
-    // if (!/[$%^#@]/.test(password)) {
-    //   alert("pass must be contain an special character");
-    //   return;
-    // }
-
-    // handleSignUp(email, password);
-    // toast("Signed Up Successfully");
   };
   return (
     <div>

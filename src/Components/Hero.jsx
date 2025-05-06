@@ -11,15 +11,15 @@ const Hero = () => {
 
   return (
     <div>
-      <div className="mt-18 mb-18 flex flex-col lg:flex-row items-center gap-3 p-4 mulish bg-white">
+      <div className="mt-18 mb-18 flex flex-col lg:flex-row items-center gap-3 p-4 mulish ">
         <div class="flex flex-col gap-3 ">
           <h1
-            class="text-4xl font-bold text-gray-900 mb-4"
+            class="text-4xl font-bold  mb-4"
             // className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500"
           >
             Build Your Career with <br /> Top Tech Companies
           </h1>
-          <p class="text-lg text-gray-600 mb-6">
+          <p class="text-lg  mb-6">
             Discover jobs, connect with innovative employers,
             <br /> and take your career to the next level. Your next opportunity
             starts here.

@@ -47,8 +47,8 @@ const Reviews = () => {
 
   return (
     <div>
-      <section className="bg-gray-100 py-16 px-4 mb-28">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-10">
+      <section className="py-16 px-4 mb-28">
+        <h2 className="text-4xl font-bold text-center  mb-10">
           What Our Users Say
         </h2>
 
@@ -57,9 +57,9 @@ const Reviews = () => {
             {reviews.map((review, index) => (
               <div
                 key={index}
-                className="bg-white w-80 flex-shrink-0 p-6 rounded-2xl shadow-md transform transition-all duration-500 hover:rotate-2 hover:-translate-y-3 hover:shadow-xl hover:scale-105 hover:bg-pink-100"
+                className=" w-80 flex-shrink-0 p-6 rounded-2xl shadow-md transform transition-all duration-500 hover:rotate-2 hover:-translate-y-3 hover:shadow-xl hover:scale-105 hover:bg-pink-100 hover:text-black"
               >
-                <p className="text-gray-600 mb-4">“{review.text}”</p>
+                <p className="mb-4">“{review.text}”</p>
                 <div className="flex items-center gap-3">
                   <img
                     className="w-16 h-16 rounded-full"
@@ -74,10 +74,8 @@ const Reviews = () => {
                       <FaStar></FaStar>
                       <FaStar></FaStar>
                     </div>
-                    <h4 className="font-semibold text-gray-800">
-                      {review.name}
-                    </h4>
-                    <p className="text-sm text-gray-500">{review.role}</p>
+                    <h4 className="font-semibold ">{review.name}</h4>
+                    <p className="text-sm ">{review.role}</p>
                   </div>
                 </div>
               </div>

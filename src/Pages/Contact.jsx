@@ -4,6 +4,7 @@ import { FaGithub, FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { toast, ToastContainer } from "react-toastify";
 import { IoIosCheckmarkCircle } from "react-icons/io";
+import Footer from "../Components/Footer";
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -38,7 +39,7 @@ function ContactUs() {
   };
 
   return (
-    <section className="mulish max-w-6xl mx-auto">
+    <section className="mulish max-w-6xl mx-auto ">
       <Navber></Navber>
       <h2
         className="text-4xl font-medium text-black mt-10"
@@ -54,6 +55,7 @@ function ContactUs() {
         we're here for you.
       </p>
       <form
+        // className="mb-18"
         onSubmit={handleSubmit}
         style={{ maxWidth: "600px", margin: "0 auto" }}
       >
@@ -122,25 +124,11 @@ function ContactUs() {
           <span className="relative invisible">Send</span>
         </button>
       </form>
-      <div className="text-base font-medium text-black text-center flex flex-col gap-3 mt-16">
-        <p className="text-[18px]">Email: support@jobtracksite.com</p>
-        <p className="text-gray-600 ">Phone: +1 800 123 4567</p>
-        <p>
-          Follow us on{" "}
-          <div className="flex justify-center gap-2 mt-3 mb-18">
-            <a
-              target="blank_"
-              href="https://www.linkedin.com/in/shafayat-hossain-patowary/"
-            >
-              <FaLinkedin size={25}></FaLinkedin>
-            </a>{" "}
-            |{" "}
-            <a target="blank_" href="https://github.com/shafayatGit">
-              <FaGithub size={25}></FaGithub>
-            </a>
-          </div>
-        </p>
+
+      <div className="mt-18">
+        <Footer></Footer>
       </div>
+
       <ToastContainer></ToastContainer>
     </section>
   );

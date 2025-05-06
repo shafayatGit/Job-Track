@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../../firebase.config";
 import { ToastContainer } from "react-toastify";
+import Footer from "../Components/Footer";
 
 export const valueContext = createContext();
 
@@ -68,6 +69,7 @@ const MainLayout = () => {
       <valueContext.Provider value={contextValue}>
         <Navber></Navber>
         <Outlet></Outlet>
+        <Footer></Footer>
       </valueContext.Provider>
       <ToastContainer></ToastContainer>
     </div>
