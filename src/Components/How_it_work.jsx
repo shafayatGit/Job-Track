@@ -3,7 +3,7 @@ import React from "react";
 const How_it_work = () => {
   return (
     <div>
-      <section class="bg-gray-50 py-20 mulish">
+      <section class=" py-20 mulish bg-white">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             How It Works

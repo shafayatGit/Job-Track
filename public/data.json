@@ -1,8 +1,8 @@
 [
     {
       "id": "1",
-      "name": "TechNova",
-      "logo": "https://example.com/logos/technova.png",
+      "name": "Vivasoft",
+      "logo": "https://i.ibb.co.com/Myyq2370/vivasoft.png",
       "location": "San Francisco, CA",
       "website": "https://technova.com",
       "industry": "Software Development",
@@ -27,8 +27,8 @@
     },
     {
       "id": "2",
-      "name": "InnoSoft",
-      "logo": "https://example.com/logos/innosoft.png",
+      "name": "Brainstation 23",
+      "logo": "https://i.ibb.co.com/Txj15wFT/brain-station-23-logo.jpg",
       "location": "New York, NY",
       "website": "https://innosoft.com",
       "industry": "IT Services",
@@ -53,8 +53,8 @@
     },
     {
       "id": "3",
-      "name": "CloudCore",
-      "logo": "https://example.com/logos/cloudcore.png",
+      "name": "Enosis",
+      "logo": "https://i.ibb.co.com/B8P2BZh/enosis-solution-squarelogo-1379419865894.webp",
       "location": "Austin, TX",
       "website": "https://cloudcore.io",
       "industry": "Cloud Computing",
@@ -79,8 +79,8 @@
     },
     {
       "id": "4",
-      "name": "DataWave",
-      "logo": "https://example.com/logos/datawave.png",
+      "name": "TigerIT",
+      "logo": "https://i.ibb.co.com/wrWD49jH/tigerit.jpg",
       "location": "Chicago, IL",
       "website": "https://datawave.ai",
       "industry": "AI & Data Science",
@@ -105,8 +105,8 @@
     },
     {
       "id": "5",
-      "name": "CyberFort",
-      "logo": "https://example.com/logos/cyberfort.png",
+      "name": "Cefalo",
+      "logo": "https://i.ibb.co.com/gF3Cz2QK/CEFALO-Amravi-Limited.jpg",
       "location": "Boston, MA",
       "website": "https://cyberfort.com",
       "industry": "Cybersecurity",
@@ -131,8 +131,8 @@
     },
     {
       "id": "6",
-      "name": "MobilityX",
-      "logo": "https://example.com/logos/mobilityx.png",
+      "name": "LeadSoft",
+      "logo": "https://i.ibb.co.com/fVQzjBDG/leadsoft.jpg",
       "location": "Seattle, WA",
       "website": "https://mobilityx.app",
       "industry": "Mobile App Development",
@@ -157,8 +157,8 @@
     },
     {
       "id": "7",
-      "name": "NextGenVR",
-      "logo": "https://example.com/logos/nextgenvr.png",
+      "name": "Kaz Software",
+      "logo": "https://i.ibb.co.com/hxnBdLgY/kaaj.png",
       "location": "Los Angeles, CA",
       "website": "https://nextgenvr.com",
       "industry": "Virtual Reality",
@@ -183,8 +183,8 @@
     },
     {
       "id": "8",
-      "name": "AutoML Labs",
-      "logo": "https://example.com/logos/automl.png",
+      "name": "REVE Systems",
+      "logo": "https://i.ibb.co.com/ZRnxLvCB/reve.png",
       "location": "Denver, CO",
       "website": "https://automllabs.com",
       "industry": "Machine Learning",
@@ -209,8 +209,8 @@
     },
     {
       "id": "9",
-      "name": "GreenTech",
-      "logo": "https://example.com/logos/greentech.png",
+      "name": "Optimizely",
+      "logo": "https://i.ibb.co.com/cc2ZzYCZ/optimizely.jpg",
       "location": "Portland, OR",
       "website": "https://greentech.org",
       "industry": "Environmental Tech",
@@ -235,8 +235,8 @@
     },
     {
       "id": "10",
-      "name": "EduCraft",
-      "logo": "https://example.com/logos/educraft.png",
+      "name": "BJIT",
+      "logo": " https://i.ibb.co.com/HTnNkL2k/bjit.png",
       "location": "Atlanta, GA",
       "website": "https://educraft.io",
       "industry": "EdTech",
@@ -261,8 +261,8 @@
     },
     {
       "id": "11",
-      "name": "QuantumSoft",
-      "logo": "https://example.com/logos/quantumsoft.png",
+      "name": "Therap Ltd Bd",
+      "logo": "https://i.ibb.co.com/h1sdcpJg/therapbd.jpg",
       "location": "Toronto, Canada",
       "website": "https://quantumsoft.ca",
       "industry": "Quantum Computing",
@@ -287,8 +287,8 @@
     },
     {
       "id": "12",
-      "name": "SmartChain",
-      "logo": "https://example.com/logos/smartchain.png",
+      "name": "Dream 71 Bangladesh",
+      "logo": "https://i.ibb.co.com/LDmLNHHv/dream71.jpg",
       "location": "Berlin, Germany",
       "website": "https://smartchain.io",
       "industry": "Blockchain",
@@ -313,3 +313,14 @@
     }
   ]
   
+ 
+
+
+
+
+
+
+
+
+
+

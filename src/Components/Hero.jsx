@@ -4,7 +4,7 @@ import How_it_work from "./How_it_work";
 const Hero = () => {
   return (
     <div>
-      <div className="mt-18 mb-18 flex flex-col lg:flex-row items-center gap-3 p-4 mulish">
+      <div className="mt-18 mb-18 flex flex-col lg:flex-row items-center gap-3 p-4 mulish bg-white">
         <div class="flex flex-col gap-3 ">
           <h1 class="text-4xl font-bold text-gray-900 mb-4">
             Build Your Career with <br /> Top Tech Companies

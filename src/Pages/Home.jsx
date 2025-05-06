@@ -4,12 +4,15 @@ import CardContainer from "../Components/CardContainer";
 import Carousel from "../Components/Carousel";
 import TopCatagory from "../Components/TopCatagory";
 import Platform from "../Components/Platform";
+import { useLoaderData } from "react-router";
 
 const Home = () => {
+  const data = useLoaderData();
+
   return (
     <div>
       <Hero></Hero>
-      <CardContainer></CardContainer>
+      <CardContainer data={data}></CardContainer>
       <TopCatagory></TopCatagory>
       <Platform></Platform>
     </div>

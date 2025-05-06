@@ -5,7 +5,7 @@ const Navber = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   return (
-    <div className="navbar bg-base-100 shadow-sm mulish max-w-6xl mx-auto py-7">
+    <div className="navbar bg-white shadow-sm mulish max-w-6xl mx-auto py-7">
       <div className="navbar-start">
         <div className="dropdown">
           <div
