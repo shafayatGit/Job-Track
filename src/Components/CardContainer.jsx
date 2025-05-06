@@ -5,7 +5,7 @@ import Cards from "./Cards";
 const CardContainer = ({ data }) => {
   //   console.log(data);
   return (
-    <div className="mulish mt-32 mb-32">
+    <div id="cards_container" className="mulish mt-32 mb-32">
       <div className="text-center">
         <h2 class="text-4xl font-bold text-gray-800 mb-4">
           All Available Companies

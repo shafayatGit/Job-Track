@@ -9,7 +9,7 @@ const CardsDetails = () => {
   const [showModal, setShowModal] = useState(false);
 
   const singleJob = data.find((job) => job.id === id);
-  const { name, logo, location, website, jobs, industry } = singleJob;
+  const { name, logo, website, jobs, industry } = singleJob;
 
   //   console.log(jobs);
 

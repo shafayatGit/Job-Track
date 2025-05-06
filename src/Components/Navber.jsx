@@ -5,7 +5,10 @@ const Navber = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const handleJobs = () => {
-    return window.scrollTo(0, 1190);
+    const cards_container = document.getElementById("cards_container");
+    cards_container.scrollIntoView({
+      behavior: "smooth",
+    });
   };
   return (
     <div className="navbar bg-white shadow-sm mulish max-w-6xl mx-auto py-7">
@@ -89,7 +92,9 @@ const Navber = () => {
             <NavLink
               to={"/"}
               className={({ isActive }) =>
-                isActive ? "text-green-500 font-medium" : ""
+                isActive
+                  ? "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500 font-semibold"
+                  : ""
               }
             >
               Home
@@ -105,7 +110,9 @@ const Navber = () => {
             <NavLink
               to={"/contact"}
               className={({ isActive }) =>
-                isActive ? "text-green-500 font-medium" : ""
+                isActive
+                  ? "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500 font-semibold"
+                  : ""
               }
             >
               Contact Us
@@ -118,13 +125,11 @@ const Navber = () => {
         <button
           onClick={() => navigate("/signin")}
           className={`cursor-pointer relative inline-flex items-center justify-center p-4 px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group ${
-            pathname == "/signin" ? "text-black" : ""
+            pathname == "/signin" ? "border-b-8 border-purple-700" : ""
           }`}
         >
           <span
-            className={`absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease ${
-              pathname == "/signin" ? "text-black" : ""
-            }`}
+            className={`absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease `}
           >
             <svg
               className="w-6 h-6"
@@ -142,9 +147,7 @@ const Navber = () => {
             </svg>
           </span>
           <span
-            className={`absolute flex items-center justify-center w-full h-full text-white font-medium transition-all duration-300 transform group-hover:translate-x-full ease bg-linear-65 from-blue-700 to-pink-600 ${
-              pathname == "/signin" ? "text-black" : ""
-            }`}
+            className={`absolute flex items-center justify-center w-full h-full text-white font-medium transition-all duration-300 transform group-hover:translate-x-full ease bg-linear-65 from-blue-700 to-pink-600 `}
           >
             Login
           </span>
@@ -154,7 +157,9 @@ const Navber = () => {
         {/* Register Btn */}
         <button
           onClick={() => navigate("/signup")}
-          className="cursor-pointer relative inline-flex items-center justify-center p-4 px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group"
+          className={`cursor-pointer relative inline-flex items-center justify-center p-4 px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group ${
+            pathname == "/signup" ? "border-b-8 border-purple-700" : ""
+          }`}
         >
           <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease">
             <svg

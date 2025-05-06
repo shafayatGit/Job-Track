@@ -17,12 +17,17 @@ const router = createBrowserRouter([
         Component: Home,
         loader: () => fetch("/data.json"),
       },
+      {
+        path: "/signup",
+        Component: SignUp,
+      },
+      {
+        path: "/signin",
+        Component: SignIn,
+      },
     ],
   },
-  {
-    path: "/signin",
-    Component: SignIn,
-  },
+
   {
     path: "/company-details/:id",
     hydrateFallbackElement: (
@@ -31,10 +36,7 @@ const router = createBrowserRouter([
     Component: CardsDetails,
     loader: () => fetch("/data.json"),
   },
-  {
-    path: "/signup",
-    Component: SignUp,
-  },
+
   {
     path: "/contact",
     Component: ContactUs,
