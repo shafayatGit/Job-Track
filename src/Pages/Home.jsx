@@ -5,6 +5,7 @@ import Carousel from "../Components/Carousel";
 import TopCatagory from "../Components/TopCatagory";
 import Platform from "../Components/Platform";
 import { useLoaderData } from "react-router";
+import Reviews from "../Components/Reviews";
 
 const Home = () => {
   const data = useLoaderData();
@@ -13,6 +14,7 @@ const Home = () => {
     <div>
       <Hero></Hero>
       <CardContainer data={data}></CardContainer>
+      <Reviews></Reviews>
       <TopCatagory></TopCatagory>
       <Platform></Platform>
     </div>

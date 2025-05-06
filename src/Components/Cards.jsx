@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router";
 
 const Cards = ({ cardData }) => {
-  console.log(cardData);
+  //   console.log(cardData);
   return (
     <div className="mx-5 lg:mx-0 mulish bg-purple-100">
       <Link
-        to="/company/123" // Replace with dynamic ID or route
+        to={`/company-details/${cardData.id}`} // Replace with dynamic ID or route
         className="bg-white border hover:bg-purple-200 border-gray-200 rounded-2xl p-6 flex flex-col items-center justify-center shadow-sm hover:shadow-xl hover:scale-105 transition duration-300 cursor-pointer"
       >
         <div className="w-20 h-20 mb-4 flex items-center justify-center bg-gray-100 rounded-full overflow-hidden">

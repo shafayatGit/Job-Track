@@ -4,6 +4,9 @@ import { NavLink, useLocation, useNavigate } from "react-router";
 const Navber = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const handleJobs = () => {
+    return window.scrollTo(0, 1190);
+  };
   return (
     <div className="navbar bg-white shadow-sm mulish max-w-6xl mx-auto py-7">
       <div className="navbar-start">
@@ -69,7 +72,7 @@ const Navber = () => {
         <div className="flex items-center gap-1 ">
           <img
             className="w-10 h-10 lg:w-16 lg:h-16"
-            src="sticker.webp"
+            src="https://i.ibb.co.com/Ps3m36sZ/sticker.webp"
             alt=""
           />
           <NavLink
@@ -93,12 +96,7 @@ const Navber = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to={"/jobs"}
-              className={({ isActive }) =>
-                isActive ? "text-green-500 font-medium" : ""
-              }
-            >
+            <NavLink to={"/"} onClick={handleJobs}>
               Jobs
             </NavLink>
           </li>
