@@ -12,7 +12,7 @@ const How_it_work = () => {
           </p>
 
           <div class="grid md:grid-cols-3 gap-10">
-            <div class=" p-8 rounded-2xl shadow hover:shadow-xl transition">
+            <div class=" p-8 rounded-2xl shadow hover:shadow-xl hover:scale-105  duration-300 transition">
               <div class="text-blue-600 text-4xl mb-4">🔍</div>
               <h3 class="text-xl font-semibold mb-2">1. Browse Jobs</h3>
               <p class="">
@@ -21,7 +21,7 @@ const How_it_work = () => {
               </p>
             </div>
 
-            <div class="p-8 rounded-2xl shadow hover:shadow-xl transition">
+            <div class="p-8 rounded-2xl shadow hover:shadow-xl transition hover:scale-105  duration-300">
               <div class="text-green-600 text-4xl mb-4">📝</div>
               <h3 class="text-xl font-semibold mb-2">2. Apply Easily</h3>
               <p class="">
@@ -30,7 +30,7 @@ const How_it_work = () => {
               </p>
             </div>
 
-            <div class=" p-8 rounded-2xl shadow hover:shadow-xl transition">
+            <div class=" p-8 rounded-2xl shadow hover:shadow-xl transition hover:scale-105  duration-300">
               <div class="text-purple-600 text-4xl mb-4">🎯</div>
               <h3 class="text-xl font-semibold mb-2">3. Get Hired</h3>
               <p class="">

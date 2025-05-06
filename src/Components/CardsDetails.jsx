@@ -24,7 +24,7 @@ const CardsDetails = () => {
             alt=""
           />
 
-          <div className=" flex flex-col gap-10">
+          <div className=" flex flex-col gap-10 ">
             <div className=" mt-5 flex flex-col">
               <h2 className="card-title  font-extrabold text-2xl">{name}</h2>
               <p className=" text-purple-500">{industry}</p>
@@ -51,7 +51,7 @@ const CardsDetails = () => {
                       </p>
                       <button
                         onClick={() => setShowModal(true)}
-                        className="mt-5 w-full cursor-pointer relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group mb-28"
+                        className=" mt-5 w-full cursor-pointer relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group mb-28"
                       >
                         <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease">
                           <svg
@@ -83,21 +83,21 @@ const CardsDetails = () => {
                               <h3 className="text-2xl font-semibold text-black ">
                                 {job.title}
                               </h3>
-                              <p className="text-gray-500 font-medium text-base border border-gray-400 rounded-2xl px-2 py-2">
+                              <p className="text-gray-700 font-medium text-base border border-gray-400 rounded-2xl px-2 py-2">
                                 {job.salary}
                               </p>
                             </div>
                             <p className="text-black text-2xl font-semibold mb-3 mt-2">
                               Requirements:
                               {job.requirements.map((req) => (
-                                <p className="text-gray-500 text-base mb-2 font-normal">
+                                <p className="text-gray-700 text-base mb-2 font-normal">
                                   {req}
                                 </p>
                               ))}
                             </p>
                             <p className="text-black font-bold text-xl mr-2">
                               Location:{" "}
-                              <span className="text-gray-500  font-medium text-base border border-gray-400  rounded-2xl px-5 py-2">
+                              <span className="text-gray-700  font-medium text-base border border-gray-400  rounded-2xl px-5 py-2">
                                 {job.location}
                               </span>{" "}
                             </p>

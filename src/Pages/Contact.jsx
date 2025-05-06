@@ -42,13 +42,13 @@ function ContactUs() {
     <section className="mulish max-w-6xl mx-auto ">
       <Navber></Navber>
       <h2
-        className="text-4xl font-medium text-black mt-10"
+        className="text-4xl font-medium  mt-10"
         style={{ textAlign: "center", marginBottom: "1rem" }}
       >
         Contact Us
       </h2>
       <p
-        className="text-sm font-base text-gray-500"
+        className="text-sm font-base "
         style={{ textAlign: "center", marginBottom: "2rem" }}
       >
         Have questions or need help? Whether you're a job seeker or an employer,
@@ -60,7 +60,7 @@ function ContactUs() {
         style={{ maxWidth: "600px", margin: "0 auto" }}
       >
         <div style={{ marginBottom: "1rem" }}>
-          <label className="text-xl font-medium text-black">Name</label>
+          <label className="text-xl font-medium ">Name</label>
           <br />
           <input
             className="border border-gray-300 rounded-lg"
@@ -73,7 +73,7 @@ function ContactUs() {
           />
         </div>
         <div style={{ marginBottom: "1rem" }}>
-          <label className="text-xl font-medium text-black">Email</label>
+          <label className="text-xl font-medium ">Email</label>
           <br />
           <input
             className="border border-gray-300 rounded-lg"
@@ -86,7 +86,7 @@ function ContactUs() {
           />
         </div>
         <div style={{ marginBottom: "1rem" }}>
-          <label className="text-xl font-medium text-black">Message</label>
+          <label className="text-xl font-medium ">Message</label>
           <br />
           <textarea
             className="border border-gray-300 rounded-lg"

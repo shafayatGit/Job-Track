@@ -90,7 +90,7 @@ const Navber = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-[18px]  font-light">
-          <li className="">
+          <li className="hover:scale-105  duration-300">
             <NavLink
               to={"/"}
               className={({ isActive }) =>
@@ -102,13 +102,13 @@ const Navber = () => {
               Home
             </NavLink>
           </li>
-          <li>
+          <li className="hover:scale-105  duration-300">
             <NavLink to={"/"} onClick={handleJobs}>
               Jobs
             </NavLink>
           </li>
 
-          <li>
+          <li className="hover:scale-105  duration-300">
             <NavLink
               to={"/contact"}
               className={({ isActive }) =>
