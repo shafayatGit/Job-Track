@@ -1,12 +1,20 @@
 import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import { fadeInUp } from "./motionVariants";
+import { motion } from "framer-motion";
 
 const Platform = () => {
   const { ref, inView } = useInView();
   return (
     <div>
-      <section className=" py-20 mulish">
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className=" py-20 mulish"
+      >
         <div className="container mx-auto text-center" ref={ref}>
           <h2 className="text-4xl font-bold  mb-6">Our Impact So Far</h2>
           <p className=" mb-12">
@@ -72,7 +80,7 @@ const Platform = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.div>
     </div>
   );
 };

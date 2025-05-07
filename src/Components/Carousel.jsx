@@ -8,7 +8,7 @@ const Carousel = () => {
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
-  //   console.log(reviews);
+
   {
     reviews.map((data) => {
       <div className="carousel-item">
@@ -37,7 +37,6 @@ const Carousel = () => {
     <div>
       <div className="carousel rounded-box">
         {reviews.map((data) => {
-          //   console.log(data.image);
           <div className="">
             <img src={data.image} alt="Burger" />
           </div>;

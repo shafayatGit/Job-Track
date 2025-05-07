@@ -23,7 +23,7 @@ function ContactUs() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // You can replace this with an API call
-    console.log("Form submitted:", formData);
+
     toast(
       <div className="flex items-center gap-2">
         <IoIosCheckmarkCircle
@@ -40,7 +40,6 @@ function ContactUs() {
 
   return (
     <section className="mulish max-w-6xl mx-auto ">
-      <Navber></Navber>
       <h2
         className="text-4xl font-medium  mt-10"
         style={{ textAlign: "center", marginBottom: "1rem" }}
@@ -125,9 +124,7 @@ function ContactUs() {
         </button>
       </form>
 
-      <div className="mt-18">
-        <Footer></Footer>
-      </div>
+      <div className="mt-18"></div>
 
       <ToastContainer></ToastContainer>
     </section>

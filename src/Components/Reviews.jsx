@@ -1,5 +1,7 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import { fadeInRight } from "./motionVariants";
+import { motion } from "framer-motion";
 
 //
 
@@ -47,7 +49,13 @@ const Reviews = () => {
 
   return (
     <div>
-      <section className="py-16 px-4 mb-28">
+      <motion.div
+        variants={fadeInRight}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="py-16 px-4 mb-28"
+      >
         <h2 className="text-4xl font-bold text-center  mb-10">
           What Our Users Say
         </h2>
@@ -82,7 +90,7 @@ const Reviews = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.div>
     </div>
   );
 };

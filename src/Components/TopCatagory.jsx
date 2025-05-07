@@ -1,16 +1,31 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInRight } from "./motionVariants";
 
 const TopCatagory = () => {
   return (
     <div>
       <section className=" py-16 px-4 text-center mulish">
-        <h2 className="text-4xl font-bold mb-3 ">Browse by Category</h2>
-        <p className=" max-w-xl mx-auto mb-12">
-          Explore job opportunities by industry. Find your dream job faster by
-          browsing through job categories.
-        </p>
+        <motion.div
+          variants={fadeInRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <h2 className="text-4xl font-bold mb-3 ">Browse by Category</h2>
+          <p className=" max-w-xl mx-auto mb-12">
+            Explore job opportunities by industry. Find your dream job faster by
+            browsing through job categories.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <motion.div
+          variants={fadeInLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
+        >
           {/* Card: Agriculture */}
           <div className=" p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:scale-105 transition duration-300 ease-in-out cursor-pointer group">
             <div className="text-4xl mb-4 group-hover:scale-110 transition">
@@ -82,7 +97,7 @@ const TopCatagory = () => {
             <h3 className="text-lg font-semibold ">Transport</h3>
             <p className="text-green-600 mt-2 font-medium">1244 jobs</p>
           </div>
-        </div>
+        </motion.div>
       </section>
     </div>
   );

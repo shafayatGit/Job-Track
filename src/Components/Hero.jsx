@@ -1,5 +1,7 @@
 import React from "react";
 import How_it_work from "./How_it_work";
+import { motion } from "framer-motion";
+import { fadeInLeft, fadeInRight, fadeInUp } from "./motionVariants";
 
 const Hero = () => {
   const handleJobs = () => {
@@ -12,7 +14,12 @@ const Hero = () => {
   return (
     <div>
       <div className="mt-18 mb-18 flex flex-col lg:flex-row items-center gap-3 p-4 mulish ">
-        <div class="flex flex-col gap-3 ">
+        <motion.div
+          variants={fadeInLeft}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col gap-3 "
+        >
           <h1
             class="text-4xl font-bold  mb-4"
             // className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500"
@@ -49,15 +56,20 @@ const Hero = () => {
             </span>
             <span className="relative invisible">Explore Jobs</span>
           </button>
-        </div>
-        <div class="mt-10 lg:mt-0 lg:w-1/2 lg:pl-12">
+        </motion.div>
+        <motion.div
+          variants={fadeInRight}
+          initial="hidden"
+          animate="visible"
+          class="mt-10 lg:mt-0 lg:w-1/2 lg:pl-12"
+        >
           <img
             className="w-full rounded-2xl shadow-xl"
             src="hero.jpg"
             alt="Tech Career"
           />
           {/* <img src="https://example.com/hero-image.jpg" alt="Tech Career" class="w-full rounded-2xl shadow-xl"> */}
-        </div>
+        </motion.div>
       </div>
       <How_it_work></How_it_work>
     </div>

@@ -6,6 +6,7 @@ import SignUp from "./SignUp";
 import ErrorPage from "./ErrorPage";
 import ContactUs from "./Contact";
 import CardsDetails from "../Components/CardsDetails";
+import PrivateRoute from "../Provider/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -25,25 +26,29 @@ const router = createBrowserRouter([
         path: "/signin",
         Component: SignIn,
       },
+
+      {
+        path: "/contact",
+        Component: ContactUs,
+      },
+
+      {
+        path: "/*",
+        element: <ErrorPage></ErrorPage>,
+      },
     ],
   },
-
   {
     path: "/company-details/:id",
     hydrateFallbackElement: (
       <span className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-600"></span>
     ),
-    Component: CardsDetails,
+    element: (
+      <PrivateRoute>
+        <CardsDetails></CardsDetails>
+      </PrivateRoute>
+    ),
     loader: () => fetch("/data.json"),
-  },
-
-  {
-    path: "/contact",
-    Component: ContactUs,
-  },
-  {
-    path: "/*",
-    element: <ErrorPage></ErrorPage>,
   },
 ]);
 

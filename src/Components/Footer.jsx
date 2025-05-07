@@ -5,7 +5,7 @@ import { NavLink } from "react-router";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer rounded-t-lg flex items-center justify-around  bg-neutral text-neutral-content p-10 mulish  ">
+      <footer className="footer rounded-t-lg flex lg:flex-row flex-col mt-22 items-center justify-around  bg-neutral text-neutral-content p-10 mulish  ">
         <div>
           <div className="flex items-center gap-1 ">
             <img
@@ -31,7 +31,39 @@ const Footer = () => {
             <p className="text-white mulish">Phone: +1 800 123 4567</p>
           </div>
         </div>
-        <p>
+        <div>
+          <ul className="flex text-[18px]  font-light gap-5">
+            <li className="hover:scale-105  duration-300">
+              <NavLink
+                to={"/"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500 font-semibold"
+                    : ""
+                }
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="hover:scale-105  duration-300">
+              <NavLink to={"/"}>Jobs</NavLink>
+            </li>
+
+            <li className="hover:scale-105  duration-300">
+              <NavLink
+                to={"/contact"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500 font-semibold"
+                    : ""
+                }
+              >
+                Contact Us
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        <div>
           Follow us on{" "}
           <div className="flex justify-center gap-2 mt-3 mb-18">
             <a
@@ -45,7 +77,7 @@ const Footer = () => {
               <FaGithub size={25}></FaGithub>
             </a>
           </div>
-        </p>
+        </div>
       </footer>
     </div>
   );

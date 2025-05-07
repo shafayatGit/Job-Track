@@ -1,8 +1,15 @@
 import React from "react";
+import { fadeIn, fadeInLeft, fadeInUp } from "./motionVariants";
+import { motion } from "framer-motion";
 
 const How_it_work = () => {
   return (
-    <div>
+    <motion.div
+      variants={fadeIn}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <section class=" py-20 mulish ">
         <div class="container mx-auto px-6 text-center">
           <h2 class="text-3xl md:text-4xl font-bold  mb-4">How It Works</h2>
@@ -41,7 +48,7 @@ const How_it_work = () => {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 
 const Cards = ({ cardData }) => {
-  //   console.log(cardData);
+  //   .log(cardData);
   return (
     <div className="mx-5 lg:mx-0 mulish ">
       <Link

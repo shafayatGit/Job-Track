@@ -1,21 +1,37 @@
 import React, { useContext } from "react";
 import Navber from "../Components/Navber";
-import { valueContext } from "../MainLayout/MainLayout";
+// import { valueContext } from "../MainLayout/MainLayout";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { IoIosCheckmarkCircle } from "react-icons/io";
+import { Navigate, NavLink, useNavigate } from "react-router";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const SignUp = () => {
-  const { handleSignUp } = useContext(valueContext);
-  // console.log(handleSignUp);
+  const { handleSignUp, updateUser, setUser } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const fullName = event.target.username.value;
+    const fullName = event.target.username.value;
+    const photoUrl = event.target.photoUrl.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    const confirmPassword = event.target.confirmPassword.value;
 
-    handleSignUp(email, password);
+    handleSignUp(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        updateUser({ displayName: fullName, photoURL: photoUrl }).then(() => {
+          setUser({ ...user, displayName: fullName, photoURL: photoUrl });
+          navigate("/");
+        });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
 
     if (password.length < 6) {
       Swal.fire({
@@ -24,15 +40,7 @@ const SignUp = () => {
       });
       return;
     }
-    if (password !== confirmPassword) {
-      Swal.fire({
-        icon: "error",
-        title:
-          '<p class="font-bold">password must be matched with confirmed password</p>',
-      });
 
-      return;
-    }
     if (!/[a-z]/.test(password)) {
       Swal.fire({
         icon: "error",
@@ -101,6 +109,20 @@ const SignUp = () => {
             />
           </div>
 
+          {/* <!-- Photo URL --> */}
+          <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-2">
+              Photo URL
+            </label>
+            <input
+              name="photoUrl"
+              id="photoUrl"
+              type="text"
+              placeholder="https://cdn.example.com/images/photo.jpg"
+              class="placeholder-gray-500 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+            />
+          </div>
+
           {/* <!-- Email --> */}
           <div class="mb-4">
             <label class="block text-gray-700 font-medium mb-2">Email</label>
@@ -125,20 +147,6 @@ const SignUp = () => {
             />
           </div>
 
-          {/* <!-- Confirm Password --> */}
-          <div class="mb-4">
-            <label class="block text-gray-700 font-medium mb-2">
-              Confirm Password
-            </label>
-            <input
-              name="confirmPassword"
-              id="confirmPassword"
-              type="password"
-              placeholder="********"
-              class="placeholder-gray-500 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-            />
-          </div>
-
           {/* <!-- Forgot password --> */}
           <div class="text-right mb-4">
             <a href="#" class="text-sm text-blue-500 hover:underline">
@@ -153,6 +161,15 @@ const SignUp = () => {
           >
             Register
           </button>
+          <div className="flex justify-center text-base  mt-3 font-semibold">
+            <h1 className="mr-2 ">Already have an account?</h1>
+            <NavLink
+              className="text-purple-600 hover:scale-110 hover:text-purple-800"
+              to={"/signin"}
+            >
+              Login
+            </NavLink>
+          </div>
         </form>
         {/* <!-- Divider --> */}
       </div>
