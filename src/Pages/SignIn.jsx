@@ -34,6 +34,7 @@ const SignIn = () => {
 
     signInWithPopup(auth, provider)
       .then((result) => {
+        setUser(result.user);
         navigate("/");
         console.log(result);
       })
@@ -91,22 +92,22 @@ const SignIn = () => {
         <h2 class="text-3xl font-bold text-center text-gray-800 mb-6 mulish">
           Login To Your Account
         </h2>
-        <button
-          onClick={handleGoogleSignUp}
-          class=" cursor-pointer w-full flex items-center justify-center gap-3 bg-white border border-gray-300 py-2 rounded-xl hover:bg-gray-100 transform hover:-translate-y-1 transition duration-300"
-        >
-          <img
-            src="https://www.svgrepo.com/show/475656/google-color.svg"
-            alt="Google"
-            class="w-5 h-5"
-          />
-          <span class="text-sm font-medium mulish text-gray-700 ">
-            Continue with Google
-          </span>
-        </button>
+
         {/* <!-- Google Login --> */}
         <form onSubmit={handleSubmit}>
-          {" "}
+          <button
+            onClick={handleGoogleSignUp}
+            class=" cursor-pointer w-full flex items-center justify-center gap-3 bg-white border border-gray-300 py-2 rounded-xl hover:bg-gray-100 transform hover:-translate-y-1 transition duration-300"
+          >
+            <img
+              src="https://www.svgrepo.com/show/475656/google-color.svg"
+              alt="Google"
+              class="w-5 h-5"
+            />
+            <span class="text-sm font-medium mulish text-gray-700 ">
+              Continue with Google
+            </span>
+          </button>
           <div class="my-6 flex items-center">
             <hr class="flex-grow border-gray-300" />
             <span class="px-4 text-gray-500 text-sm">or</span>

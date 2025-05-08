@@ -31,6 +31,7 @@ const SignUp = () => {
 
     signInWithPopup(auth, provider)
       .then((result) => {
+        setUser(result.user);
         navigate("/");
         console.log(result);
       })
@@ -115,22 +116,22 @@ const SignUp = () => {
         <h2 class="text-4xl font-bold text-center text-gray-800 mb-6 mulish">
           Create Account
         </h2>
-        <button
-          onClick={handleGoogleSignUp}
-          class="mulish cursor-pointer w-full flex items-center justify-center gap-3 bg-white border border-gray-300 py-2 rounded-xl hover:bg-gray-100 transform hover:-translate-y-1 transition duration-300"
-        >
-          <img
-            src="https://www.svgrepo.com/show/475656/google-color.svg"
-            alt="Google"
-            class="w-5 h-5"
-          />
-          <span class="text-sm font-medium text-gray-700 ">
-            Continue with Google
-          </span>
-        </button>
 
         <form onSubmit={handleSubmit}>
           {/* <!-- Google Login --> */}
+          <button
+            onClick={handleGoogleSignUp}
+            class="mulish cursor-pointer w-full flex items-center justify-center gap-3 bg-white border border-gray-300 py-2 rounded-xl hover:bg-gray-100 transform hover:-translate-y-1 transition duration-300"
+          >
+            <img
+              src="https://www.svgrepo.com/show/475656/google-color.svg"
+              alt="Google"
+              class="w-5 h-5"
+            />
+            <span class="text-sm font-medium text-gray-700 ">
+              Continue with Google
+            </span>
+          </button>
 
           <div class="my-6 flex items-center">
             <hr class="flex-grow border-gray-300" />

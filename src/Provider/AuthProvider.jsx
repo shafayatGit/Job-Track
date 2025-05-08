@@ -50,11 +50,11 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  useEffect(() => {
-    if (user) {
-      setLoading(false);
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (user) {
+  //     setLoading(false);
+  //   }
+  // }, [user]);
   const contextValue = {
     handleSignUp,
     handleSignIn,
