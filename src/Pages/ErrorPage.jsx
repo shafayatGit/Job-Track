@@ -4,7 +4,6 @@ import Navber from "../Components/Navber";
 const ErrorPage = () => {
   return (
     <div className="max-w-6xl mx-auto">
-      <Navber></Navber>
       <div>
         <img
           className="mx-auto max-h-md md:h-96 shadow"

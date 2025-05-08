@@ -5,6 +5,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { toast, ToastContainer } from "react-toastify";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import Footer from "../Components/Footer";
+import { Helmet } from "react-helmet-async";
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -40,6 +41,10 @@ function ContactUs() {
 
   return (
     <section className="mulish max-w-6xl mx-auto px-5">
+      <Helmet>
+        <title>JobTrack | Contact</title>
+      </Helmet>
+      ;
       <h2
         className="text-4xl font-semibold  mt-10"
         style={{ textAlign: "center", marginBottom: "1rem" }}
@@ -123,9 +128,7 @@ function ContactUs() {
           <span className="relative invisible">Send</span>
         </button>
       </form>
-
       <div className="mt-18"></div>
-
       <ToastContainer></ToastContainer>
     </section>
   );

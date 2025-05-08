@@ -31,10 +31,6 @@ const router = createBrowserRouter([
         path: "/contact",
         Component: ContactUs,
       },
-      {
-        path: "/profile",
-        Component: Profile,
-      },
 
       {
         path: "/*",
@@ -53,6 +49,14 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     loader: () => fetch("/data.json"),
+  },
+  {
+    path: "/profile",
+    element: (
+      <PrivateRoute>
+        <Profile></Profile>
+      </PrivateRoute>
+    ),
   },
 ]);
 

@@ -12,6 +12,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../../firebase.config";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 // import Swal from "sweetalert2";
 
 const SignIn = () => {
@@ -68,6 +69,9 @@ const SignIn = () => {
   };
   return (
     <div className="px-4">
+      <Helmet>
+        <title>JobTrack | Login</title>
+      </Helmet>
       <div class=" p-10 rounded-3xl shadow-2xl w-full max-w-md transform transition duration-500 hover:-translate-y-2 hover:shadow-3xl mx-auto mt-9 mb-18 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100">
         <h2 class="text-3xl font-bold text-center text-gray-800 mb-6 mulish">
           Login To Your Account

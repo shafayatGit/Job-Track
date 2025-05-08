@@ -13,6 +13,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../../firebase.config";
 import { FaLaugh } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const SignUp = () => {
   const { handleSignUp, updateUser, setUser } = useContext(AuthContext);
@@ -95,6 +96,9 @@ const SignUp = () => {
 
   return (
     <div className="px-4">
+      <Helmet>
+        <title>JobTrack | Register</title>
+      </Helmet>
       <div class=" p-10 rounded-3xl shadow-2xl w-full max-w-md transform transition duration-500 hover:-translate-y-2 hover:shadow-3xl mx-auto mt-9 mb-18 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100">
         <h2 class="text-4xl font-bold text-center text-gray-800 mb-6 mulish">
           Create Account
@@ -141,9 +145,10 @@ const SignUp = () => {
               Photo URL
             </label>
             <input
+              accept="image/*"
               name="photoUrl"
               id="photoUrl"
-              type="text"
+              type="file"
               placeholder="https://cdn.example.com/images/photo.jpg"
               class="text-gray-800 placeholder-gray-500 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
             />

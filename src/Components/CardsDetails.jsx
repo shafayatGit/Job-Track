@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import { FaDeleteLeft } from "react-icons/fa6";
 import { fadeInLeft, fadeInRight, fadeInUp } from "./motionVariants";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 const CardsDetails = () => {
   const data = useLoaderData();
@@ -17,6 +18,10 @@ const CardsDetails = () => {
 
   return (
     <div className="">
+      <Helmet>
+        <title>JobTrack | {name}</title>
+      </Helmet>
+      ;
       <div className="max-w-6xl mx-auto  mulish">
         <motion.div
           variants={fadeInLeft}

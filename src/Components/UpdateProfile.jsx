@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const UpdateProfile = () => {
@@ -56,6 +56,7 @@ const UpdateProfile = () => {
                 Photo URL
               </label>
               <input
+                accept="image/*"
                 name="photoUrl"
                 id="photoUrl"
                 type="text"
