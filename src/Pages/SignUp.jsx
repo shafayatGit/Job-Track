@@ -15,6 +15,8 @@ import { auth } from "../../firebase.config";
 import { FaLaugh } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../Components/AuthContext";
+import { fadeInUp } from "../Components/motionVariants";
+import { motion } from "framer-motion";
 
 const SignUp = () => {
   const { handleSignUp, updateUser, setUser, setLoading } =
@@ -39,6 +41,7 @@ const SignUp = () => {
     event.preventDefault();
     const fullName = event.target.username.value;
     const photoUrl = event.target.photoUrl.value;
+
     const email = event.target.email.value;
     const password = event.target.password.value;
 
@@ -98,7 +101,13 @@ const SignUp = () => {
   };
 
   return (
-    <div className="px-4">
+    <motion.div
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      className="px-4"
+    >
       <Helmet>
         <title>JobTrack | Register</title>
       </Helmet>
@@ -207,7 +216,7 @@ const SignUp = () => {
         </form>
         {/* <!-- Divider --> */}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

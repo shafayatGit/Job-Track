@@ -15,6 +15,8 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../Components/AuthContext";
 // import Swal from "sweetalert2";
+import { motion } from "framer-motion";
+import { fadeInUp } from "../Components/motionVariants";
 
 const SignIn = () => {
   const { handleSignIn, setUser, setLoading } = useContext(AuthContext);
@@ -75,7 +77,13 @@ const SignIn = () => {
     });
   };
   return (
-    <div className="px-4">
+    <motion.div
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      className="px-4"
+    >
       <Helmet>
         <title>JobTrack | Login</title>
       </Helmet>
@@ -162,7 +170,7 @@ const SignIn = () => {
         {/* <!-- Divider --> */}
       </div>
       <ToastContainer></ToastContainer>
-    </div>
+    </motion.div>
   );
 };
 

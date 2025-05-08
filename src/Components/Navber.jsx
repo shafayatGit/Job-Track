@@ -8,7 +8,7 @@ import { AuthContext } from "./AuthContext";
 
 const Navber = () => {
   const { user, handleSignOut } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -175,9 +175,6 @@ const Navber = () => {
             </div>
           ) : (
             <div className="flex ">
-              <button className="cursor-pointer mr-3">
-                <FaUserCircle className="md:w-10 w-5 h-5 md:h-10"></FaUserCircle>
-              </button>
               <div className="flex gap-2 lg:gap-5">
                 <button
                   onClick={() => navigate("/signin")}

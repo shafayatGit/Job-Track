@@ -8,7 +8,7 @@ import { AuthContext } from "./AuthContext";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
-  //   console.log(user);
+  // console.log(user.photoURL);
   return (
     <div>
       <Helmet>

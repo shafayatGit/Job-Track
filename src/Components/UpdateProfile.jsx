@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "./AuthContext";
 // import { AuthContext } from "../Provider/AuthProvider";
+import { fadeInRight, fadeInUp } from "./motionVariants";
+import { motion } from "framer-motion";
 
 const UpdateProfile = () => {
   const { handleSignUp, updateUser, setUser, user } = useContext(AuthContext);
@@ -17,7 +19,13 @@ const UpdateProfile = () => {
   };
 
   return (
-    <div>
+    <motion.div
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      className="max-w-6xl mx-auto"
+    >
       <h1 className="text-4xl mulish text-center font-bold">
         Update your profile
       </h1>
@@ -35,7 +43,7 @@ const UpdateProfile = () => {
         </div>
 
         {/* Right Side */}
-        <div className="w-full md:w-1/2 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-6 rounded-xl shadow-xl  transform hover:scale-105 transition duration-300">
+        <motion.div className="w-full md:w-1/2 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-6 rounded-xl shadow-xl  transform hover:scale-105 transition duration-300">
           <form onSubmit={updateProfile} className="space-y-4">
             {/* Name */}
             <div class="mb-4 mulish">
@@ -61,7 +69,7 @@ const UpdateProfile = () => {
                 name="photoUrl"
                 id="photoUrl"
                 type="text"
-                placeholder="https://cdn.example.com/images/photo.jpg"
+                placeholder="Please upload the URL from Icon8 or imgBB"
                 class="text-gray-800 placeholder-gray-500 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
               />
             </div>
@@ -72,9 +80,9 @@ const UpdateProfile = () => {
               Update
             </button>
           </form>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
