@@ -7,6 +7,7 @@ import ErrorPage from "./ErrorPage";
 import ContactUs from "./Contact";
 import CardsDetails from "../Components/CardsDetails";
 import PrivateRoute from "../Provider/PrivateRoute";
+import Profile from "../Components/Profile";
 
 const router = createBrowserRouter([
   {
@@ -26,10 +27,13 @@ const router = createBrowserRouter([
         path: "/signin",
         Component: SignIn,
       },
-
       {
         path: "/contact",
         Component: ContactUs,
+      },
+      {
+        path: "/profile",
+        Component: Profile,
       },
 
       {

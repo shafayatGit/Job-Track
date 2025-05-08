@@ -6,11 +6,31 @@ import Swal from "sweetalert2";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { Navigate, NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
+import {
+  GoogleAuthProvider,
+  sendEmailVerification,
+  signInWithPopup,
+} from "firebase/auth";
+import { auth } from "../../firebase.config";
+import { FaLaugh } from "react-icons/fa";
 
 const SignUp = () => {
   const { handleSignUp, updateUser, setUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
+
+  const provider = new GoogleAuthProvider();
+
+  const handleGoogleSignUp = () => {
+    // console.log("google");
+
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        navigate("/");
+        console.log(result);
+      })
+      .catch((error) => console.log(error));
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,9 +42,21 @@ const SignUp = () => {
     handleSignUp(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        updateUser({ displayName: fullName, photoURL: photoUrl }).then(() => {
-          setUser({ ...user, displayName: fullName, photoURL: photoUrl });
-          navigate("/");
+        sendEmailVerification(auth.currentUser).then(() => {
+          updateUser({ displayName: fullName, photoURL: photoUrl }).then(() => {
+            if (!user.emailVarified) {
+              toast(
+                <div className="flex items-center gap-2">
+                  <FaLaugh size={25} className="text-green-700"></FaLaugh>
+                  <p className="text-black mulish font-base text-[18px]">
+                    Please Varify Your Email
+                  </p>
+                </div>
+              );
+              setUser({ ...user, displayName: fullName, photoURL: photoUrl });
+              navigate("/");
+            }
+          });
         });
       })
       .catch((error) => {
@@ -59,30 +91,21 @@ const SignUp = () => {
 
       return;
     }
-
-    toast(
-      <div className="flex items-center gap-2">
-        <IoIosCheckmarkCircle
-          size={25}
-          className="text-green-700"
-        ></IoIosCheckmarkCircle>
-        <p className="text-black mulish font-base text-[18px]">
-          Logged In Successfully!
-        </p>
-      </div>
-    );
   };
 
   return (
-    <div>
-      <div class=" p-10 rounded-3xl shadow-2xl w-full max-w-md transform transition duration-500 hover:-translate-y-2 hover:shadow-3xl mx-auto mt-9 mb-18 bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200">
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">
+    <div className="px-4">
+      <div class=" p-10 rounded-3xl shadow-2xl w-full max-w-md transform transition duration-500 hover:-translate-y-2 hover:shadow-3xl mx-auto mt-9 mb-18 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-6 mulish">
           Create Account
         </h2>
 
         <form onSubmit={handleSubmit}>
           {/* <!-- Google Login --> */}
-          <button class=" cursor-pointer w-full flex items-center justify-center gap-3 bg-white border border-gray-300 py-2 rounded-xl hover:bg-gray-100 transform hover:-translate-y-1 transition duration-300">
+          <button
+            onClick={handleGoogleSignUp}
+            class="mulish cursor-pointer w-full flex items-center justify-center gap-3 bg-white border border-gray-300 py-2 rounded-xl hover:bg-gray-100 transform hover:-translate-y-1 transition duration-300"
+          >
             <img
               src="https://www.svgrepo.com/show/475656/google-color.svg"
               alt="Google"
@@ -98,20 +121,23 @@ const SignUp = () => {
             <hr class="flex-grow border-gray-300" />
           </div>
 
-          <div class="mb-4">
-            <label class="block text-gray-700 font-medium mb-2">Name</label>
+          <div class="mb-4 mulish">
+            <label class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-pink-700 font-medium mb-2">
+              Name
+            </label>
             <input
               name="username"
               id="username"
               type="text"
               placeholder="Your name"
-              class="placeholder-gray-500 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+              required
+              class=" text-gray-800 placeholder-gray-500 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
             />
           </div>
 
           {/* <!-- Photo URL --> */}
-          <div class="mb-4">
-            <label class="block text-gray-700 font-medium mb-2">
+          <div class="mb-4 mulish">
+            <label class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-pink-700 font-medium mb-2">
               Photo URL
             </label>
             <input
@@ -119,39 +145,38 @@ const SignUp = () => {
               id="photoUrl"
               type="text"
               placeholder="https://cdn.example.com/images/photo.jpg"
-              class="placeholder-gray-500 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+              class="text-gray-800 placeholder-gray-500 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
             />
           </div>
 
-          {/* <!-- Email --> */}
-          <div class="mb-4">
-            <label class="block text-gray-700 font-medium mb-2">Email</label>
+          {/* /* <!-- Email --> */}
+          <div class="mb-4 mulish">
+            <label class="block  text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-pink-700 font-medium mb-2">
+              Email
+            </label>
             <input
               name="email"
               id="email"
               type="email"
               placeholder="you@example.com"
-              class="placeholder-gray-500 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+              required
+              class="text-gray-800 placeholder-gray-500 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
             />
           </div>
 
           {/* <!-- Password --> */}
-          <div class="mb-4">
-            <label class="block text-gray-700 font-medium mb-2">Password</label>
+          <div class="mb-4 mulish">
+            <label class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-pink-700 font-medium mb-2">
+              Password
+            </label>
             <input
               id="password"
               name="password"
               type="password"
               placeholder="********"
-              class="placeholder-gray-500 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+              required
+              class="text-gray-800 placeholder-gray-500 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
             />
-          </div>
-
-          {/* <!-- Forgot password --> */}
-          <div class="text-right mb-4">
-            <a href="#" class="text-sm text-blue-500 hover:underline">
-              Forgot password?
-            </a>
           </div>
 
           {/* <!-- Submit Button --> */}
@@ -161,8 +186,8 @@ const SignUp = () => {
           >
             Register
           </button>
-          <div className="flex justify-center text-base  mt-3 font-semibold">
-            <h1 className="mr-2 ">Already have an account?</h1>
+          <div className="flex justify-center text-base  mt-3 font-semibold mulish">
+            <h1 className="mr-2 text-gray-700">Already have an account?</h1>
             <NavLink
               className="text-purple-600 hover:scale-110 hover:text-purple-800"
               to={"/signin"}

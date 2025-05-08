@@ -21,17 +21,11 @@ const CardContainer = ({ data }) => {
             culture, open roles, and what makes them great places to work.
           </p>
         </motion.div>
-        <motion.div
-          variants={fadeInRight}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="lg:p-0 mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 rounded mt-10 mb-10"
-        >
+        <div className="lg:p-0 mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 rounded mt-10 mb-10">
           {data.map((cardData) => (
             <Cards key={cardData.id} cardData={cardData}></Cards>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

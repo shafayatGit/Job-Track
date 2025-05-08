@@ -1,6 +1,7 @@
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  sendEmailVerification,
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
@@ -16,18 +17,23 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const handleSignUp = (email, pass) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, pass);
   };
   const handleSignIn = (email, pass) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, pass);
   };
 
   const handleSignOut = () => {
+    setLoading(true);
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
+        setUser(null);
+        setLoading(false);
       })
       .catch((error) => {
+        setLoading(false);
         console.log(error);
       });
   };

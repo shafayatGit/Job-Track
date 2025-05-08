@@ -39,11 +39,11 @@ const CardsDetails = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="py-20 mulish  flex items-center justify-center lg:shadow-md hover:lg:shadow-xl hover:scale-[1.02] transition "
+          className="mt-0 py-20 mulish  flex items-center justify-center lg:shadow-md hover:lg:shadow-xl hover:scale-[1.02] transition "
         >
-          <div className="h-[400px] px-0 gap-5 lg:gap-22   shadow-sm flex flex-col md:flex-row">
+          <div className="h-[400px] md:px-0 gap-5 lg:gap-22 px-8  shadow-sm flex flex-col md:flex-row">
             <img
-              className="md:h-[350px] mx-auto h-[160px] w-[160px] md:w-[350px] block rounded-lg "
+              className="md:h-[350px] mx-auto  md:w-[350px] block rounded-lg "
               src={logo}
               alt=""
             />
@@ -228,9 +228,6 @@ const CardsDetails = () => {
             </div>
           </div>
         </motion.div>
-        <div className="mt-64">
-          <Footer></Footer>
-        </div>
       </div>
     </div>
   );

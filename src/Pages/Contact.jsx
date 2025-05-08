@@ -39,9 +39,9 @@ function ContactUs() {
   };
 
   return (
-    <section className="mulish max-w-6xl mx-auto ">
+    <section className="mulish max-w-6xl mx-auto px-5">
       <h2
-        className="text-4xl font-medium  mt-10"
+        className="text-4xl font-semibold  mt-10"
         style={{ textAlign: "center", marginBottom: "1rem" }}
       >
         Contact Us

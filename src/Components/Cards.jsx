@@ -1,10 +1,18 @@
 import React from "react";
 import { Link } from "react-router";
+import { fadeInRight } from "./motionVariants";
+import { motion } from "framer-motion";
 
 const Cards = ({ cardData }) => {
   //   .log(cardData);
   return (
-    <div className="mx-5 lg:mx-0 mulish ">
+    <motion.div
+      variants={fadeInRight}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      className="mx-5 lg:mx-0 mulish "
+    >
       <Link
         to={`/company-details/${cardData.id}`} // Replace with dynamic ID or route
         className=" border hover:text-black hover:bg-purple-100 border-gray-200 rounded-2xl p-6 flex flex-col items-center justify-center shadow-sm hover:shadow-xl hover:scale-105 transition duration-300 cursor-pointer"
@@ -27,7 +35,7 @@ const Cards = ({ cardData }) => {
           </h3>
         </div>
       </Link>{" "}
-    </div>
+    </motion.div>
   );
 };
 

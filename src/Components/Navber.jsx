@@ -130,16 +130,18 @@ const Navber = () => {
       </div>
       <div className="navbar-end mulish gap-2 lg:gap-6">
         {/* User Button */}
-        {user ? (
-          <img
-            className="h-12 w-12 rounded-full cursor-pointer"
-            src={user.photoURL}
-          ></img>
-        ) : (
-          <button className="cursor-pointer">
-            <FaUserCircle className="md:w-10 w-5 h-5 md:h-10"></FaUserCircle>
-          </button>
-        )}
+        <Link to={"/profile"}>
+          {user ? (
+            <img
+              className="h-12 w-12 rounded-full cursor-pointer"
+              src={user.photoURL}
+            ></img>
+          ) : (
+            <button className="cursor-pointer">
+              <FaUserCircle className="md:w-10 w-5 h-5 md:h-10"></FaUserCircle>
+            </button>
+          )}
+        </Link>
         {user ? (
           <button
             onClick={handleSignOut}
