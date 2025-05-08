@@ -38,7 +38,13 @@ const SignIn = () => {
         navigate("/");
         console.log(result);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: '<p class="font-bold mulish text-red-600">Wrong Email</p>',
+        });
+        console.log(error);
+      });
   };
 
   const handleSubmit = (event) => {

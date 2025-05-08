@@ -6,6 +6,8 @@ import { toast, ToastContainer } from "react-toastify";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import Footer from "../Components/Footer";
 import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
+import { fadeInUp } from "../Components/motionVariants";
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -40,7 +42,13 @@ function ContactUs() {
   };
 
   return (
-    <section className="mulish max-w-6xl mx-auto px-5">
+    <motion.div
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      className="mulish max-w-6xl mx-auto px-5"
+    >
       <Helmet>
         <title>JobTrack | Contact</title>
       </Helmet>
@@ -130,7 +138,7 @@ function ContactUs() {
       </form>
       <div className="mt-18"></div>
       <ToastContainer></ToastContainer>
-    </section>
+    </motion.div>
   );
 }
 

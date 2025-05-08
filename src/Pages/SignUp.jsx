@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Navber from "../Components/Navber";
 // import { valueContext } from "../MainLayout/MainLayout";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import Swal from "sweetalert2";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { Navigate, NavLink, useNavigate } from "react-router";
@@ -33,6 +33,7 @@ const SignUp = () => {
       .then((result) => {
         setUser(result.user);
         navigate("/");
+
         console.log(result);
       })
       .catch((error) => console.log(error));
@@ -70,6 +71,10 @@ const SignUp = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         setLoading(false);
+        Swal.fire({
+          icon: "error",
+          title: '<p class="font-bold mulish text-red-600">Wrong Email</p>',
+        });
         console.log(errorCode, errorMessage);
       });
 
@@ -217,6 +222,7 @@ const SignUp = () => {
         </form>
         {/* <!-- Divider --> */}
       </div>
+      <ToastContainer></ToastContainer>
     </motion.div>
   );
 };
