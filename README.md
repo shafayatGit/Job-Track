@@ -1,12 +1,60 @@
-# React + Vite
+# 🌟 JobTrack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**JobTrack** is a modern and responsive job management web application built using **React**. It provides users with a seamless experience to explore jobs, read reviews, and manage their applications — all in a secure and dynamic interface.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 [Visit JobTrack Website](https://job-track-as9.netlify.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📌 Features
+
+### 🔐 Authentication
+
+- 🔸 **Firebase Authentication**
+  - Email & Password login
+  - Google Sign-in
+  - Password recovery
+- 🔒 **Private Routes**: Access to the job section is restricted to authenticated users only.
+
+### 🧭 Navigation
+
+- Responsive **Navbar** with route-based highlighting
+- **React Router** for smooth client-side routing
+- **Dynamic Routes** for job detail pages
+
+### 📂 Pages & Sections
+
+- **Home Page** with engaging intro and how-it-works section
+- **Jobs Section** _(Private Route)_: Shows available job listings
+- **Login / Register Pages**
+- **Review Section**: User testimonials and reviews
+- **Category Section**: Job categories to filter opportunities
+- **Success Section**: Stories from successful job seekers
+- **Footer**: Contains useful links and social icons
+
+### 💫 Animations & UX Enhancements
+
+- **Framer Motion**: Smooth animations for UI components
+- **React Toastify**: Beautiful toast notifications for alerts and messages
+- **SweetAlert2**: Elegant and responsive popups
+- **React Helmet**: Manage page titles and metadata dynamically
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech          | Usage                         |
+| ------------- | ----------------------------- |
+| React         | Front-end framework           |
+| React Router  | Client-side routing           |
+| Firebase      | Authentication backend        |
+| Framer Motion | Animations and transitions    |
+| Toastify      | Notification system           |
+| SweetAlert2   | Alert popups                  |
+| React Helmet  | Meta tag and title management |
+| HTML & CSS    | Layout and styling            |
+| JavaScript    | Application logic             |
+
+---
