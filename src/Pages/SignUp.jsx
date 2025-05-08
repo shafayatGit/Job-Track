@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { Navigate, NavLink, useNavigate } from "react-router";
-import { AuthContext } from "../Provider/AuthProvider";
+// import { AuthContext } from "../Provider/AuthProvider";
 import {
   GoogleAuthProvider,
   sendEmailVerification,
@@ -14,9 +14,11 @@ import {
 import { auth } from "../../firebase.config";
 import { FaLaugh } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../Components/AuthContext";
 
 const SignUp = () => {
-  const { handleSignUp, updateUser, setUser } = useContext(AuthContext);
+  const { handleSignUp, updateUser, setUser, setLoading } =
+    useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -63,6 +65,7 @@ const SignUp = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        setLoading(false);
         console.log(errorCode, errorMessage);
       });
 
@@ -103,22 +106,23 @@ const SignUp = () => {
         <h2 class="text-4xl font-bold text-center text-gray-800 mb-6 mulish">
           Create Account
         </h2>
+        <button
+          onClick={handleGoogleSignUp}
+          class="mulish cursor-pointer w-full flex items-center justify-center gap-3 bg-white border border-gray-300 py-2 rounded-xl hover:bg-gray-100 transform hover:-translate-y-1 transition duration-300"
+        >
+          <img
+            src="https://www.svgrepo.com/show/475656/google-color.svg"
+            alt="Google"
+            class="w-5 h-5"
+          />
+          <span class="text-sm font-medium text-gray-700 ">
+            Continue with Google
+          </span>
+        </button>
 
         <form onSubmit={handleSubmit}>
           {/* <!-- Google Login --> */}
-          <button
-            onClick={handleGoogleSignUp}
-            class="mulish cursor-pointer w-full flex items-center justify-center gap-3 bg-white border border-gray-300 py-2 rounded-xl hover:bg-gray-100 transform hover:-translate-y-1 transition duration-300"
-          >
-            <img
-              src="https://www.svgrepo.com/show/475656/google-color.svg"
-              alt="Google"
-              class="w-5 h-5"
-            />
-            <span class="text-sm font-medium text-gray-700 ">
-              Continue with Google
-            </span>
-          </button>
+
           <div class="my-6 flex items-center">
             <hr class="flex-grow border-gray-300" />
             <span class="px-4 text-gray-500 text-sm">or</span>
@@ -148,8 +152,8 @@ const SignUp = () => {
               accept="image/*"
               name="photoUrl"
               id="photoUrl"
-              type="file"
-              placeholder="https://cdn.example.com/images/photo.jpg"
+              type="text"
+              placeholder="Please give direct link from icon8 or ImgBB"
               class="text-gray-800 placeholder-gray-500 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
             />
           </div>

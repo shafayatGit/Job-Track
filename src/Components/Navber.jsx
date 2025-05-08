@@ -3,10 +3,12 @@ import { Link, NavLink, useLocation, useNavigate } from "react-router";
 import ThemeToggle from "./ThemeToggle";
 // import { valueContext } from "../MainLayout/MainLayout";
 import { FaUserCircle } from "react-icons/fa";
-import { AuthContext } from "../Provider/AuthProvider";
+import { AuthContext } from "./AuthContext";
+// import { AuthContext } from "../Provider/AuthProvider";
 
 const Navber = () => {
   const { user, handleSignOut } = useContext(AuthContext);
+  console.log(user);
 
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -130,114 +132,118 @@ const Navber = () => {
       </div>
       <div className="navbar-end mulish gap-2 lg:gap-6">
         {/* User Button */}
-        <Link to={"/profile"}>
+        <div>
           {user ? (
-            <img
-              className="h-12 w-12 rounded-full cursor-pointer"
-              src={user.photoURL}
-            ></img>
+            <div className="flex gap-4">
+              <Link to={"/profile"}>
+                <img
+                  className="h-12 w-12 rounded-full cursor-pointer"
+                  src={user.photoURL}
+                ></img>
+              </Link>
+              <button
+                onClick={handleSignOut}
+                className={` cursor-pointer relative inline-flex items-center justify-center p-4 px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group ${
+                  pathname == "/signin" ? "border-b-8 border-purple-700" : ""
+                }`}
+              >
+                <span
+                  className={`absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease `}
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
+                </span>
+                <span
+                  className={`absolute flex items-center justify-center w-full h-full text-white font-medium transition-all duration-300 transform group-hover:translate-x-full ease bg-linear-65 from-blue-700 to-pink-600 `}
+                >
+                  LogOut
+                </span>
+                <span className="relative invisible">LogOut</span>
+              </button>
+            </div>
           ) : (
-            <button className="cursor-pointer">
-              <FaUserCircle className="md:w-10 w-5 h-5 md:h-10"></FaUserCircle>
-            </button>
-          )}
-        </Link>
-        {user ? (
-          <button
-            onClick={handleSignOut}
-            className={` cursor-pointer relative inline-flex items-center justify-center p-4 px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group ${
-              pathname == "/signin" ? "border-b-8 border-purple-700" : ""
-            }`}
-          >
-            <span
-              className={`absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease `}
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </span>
-            <span
-              className={`absolute flex items-center justify-center w-full h-full text-white font-medium transition-all duration-300 transform group-hover:translate-x-full ease bg-linear-65 from-blue-700 to-pink-600 `}
-            >
-              LogOut
-            </span>
-            <span className="relative invisible">LogOut</span>
-          </button>
-        ) : (
-          <div className="flex gap-2 lg:gap-5">
-            <button
-              onClick={() => navigate("/signin")}
-              className={`text-sm md:text-base cursor-pointer relative inline-flex items-center justify-center  md:px-8 px-2 py-1 md:py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group ${
-                pathname == "/signin" ? "border-b-8 border-purple-700" : ""
-              }`}
-            >
-              <span
-                className={`absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease `}
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+            <div className="flex ">
+              <button className="cursor-pointer mr-3">
+                <FaUserCircle className="md:w-10 w-5 h-5 md:h-10"></FaUserCircle>
+              </button>
+              <div className="flex gap-2 lg:gap-5">
+                <button
+                  onClick={() => navigate("/signin")}
+                  className={`text-sm md:text-base cursor-pointer relative inline-flex items-center justify-center  md:px-8 px-2 py-1 md:py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group ${
+                    pathname == "/signin" ? "border-b-8 border-purple-700" : ""
+                  }`}
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </span>
-              <span
-                className={`absolute flex items-center justify-center w-full h-full text-white font-medium transition-all duration-300 transform group-hover:translate-x-full ease bg-linear-65 from-blue-700 to-pink-600 `}
-              >
-                Login
-              </span>
-              <span className="relative invisible">Login</span>
-            </button>
+                  <span
+                    className={`absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease `}
+                  >
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span
+                    className={`absolute flex items-center justify-center w-full h-full text-white font-medium transition-all duration-300 transform group-hover:translate-x-full ease bg-linear-65 from-blue-700 to-pink-600 `}
+                  >
+                    Login
+                  </span>
+                  <span className="relative invisible">Login</span>
+                </button>
 
-            {/* Register Btn */}
-            <button
-              onClick={() => navigate("/signup")}
-              className={`cursor-pointer relative inline-flex items-center justify-center p-4 md:px-8 px-2 py-1 text-sm md:text-base md:py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group ${
-                pathname == "/signup" ? "border-b-8 border-purple-700" : ""
-              }`}
-            >
-              <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                {/* Register Btn */}
+                <button
+                  onClick={() => navigate("/signup")}
+                  className={`cursor-pointer relative inline-flex items-center justify-center p-4 md:px-8 px-2 py-1 text-sm md:text-base md:py-3 overflow-hidden font-medium text-white transition duration-300 ease-out  rounded-full shadow-md group ${
+                    pathname == "/signup" ? "border-b-8 border-purple-700" : ""
+                  }`}
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </span>
-              <span className="absolute flex items-center justify-center w-full h-full text-white font-medium transition-all duration-300 transform group-hover:translate-x-full ease bg-linear-65 from-blue-700 to-pink-600">
-                Register
-              </span>
-              <span className="relative invisible">Register</span>
-            </button>
-          </div>
-        )}
+                  <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-linear-65 from-blue-400 to-pink-300 group-hover:translate-x-0 ease">
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span className="absolute flex items-center justify-center w-full h-full text-white font-medium transition-all duration-300 transform group-hover:translate-x-full ease bg-linear-65 from-blue-700 to-pink-600">
+                    Register
+                  </span>
+                  <span className="relative invisible">Register</span>
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
         {/* Sign IN Button */}
       </div>
     </div>

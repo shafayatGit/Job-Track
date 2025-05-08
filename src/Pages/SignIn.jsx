@@ -4,7 +4,7 @@ import React, { useContext, useRef } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { Navigate, NavLink, useLocation, useNavigate } from "react-router";
-import { AuthContext } from "../Provider/AuthProvider";
+// import { AuthContext } from "../Provider/AuthProvider";
 import {
   GoogleAuthProvider,
   sendPasswordResetEmail,
@@ -13,10 +13,11 @@ import {
 import { auth } from "../../firebase.config";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../Components/AuthContext";
 // import Swal from "sweetalert2";
 
 const SignIn = () => {
-  const { handleSignIn, setUser, user } = useContext(AuthContext);
+  const { handleSignIn, setUser, setLoading } = useContext(AuthContext);
   // const [errorEmail, setErrorEmail] = useState("");
   // const [errorPass, setErrorPass] = useState("");
   const navigate = useNavigate();
@@ -53,6 +54,12 @@ const SignIn = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        setLoading(false);
+        Swal.fire({
+          icon: "error",
+          title:
+            '<p class="font-bold text-red-600 mulish">Invalid Email OR Password</p>',
+        });
         console.log(errorCode, errorMessage);
         // setErrorPass(errorCode);
       });
@@ -76,23 +83,22 @@ const SignIn = () => {
         <h2 class="text-3xl font-bold text-center text-gray-800 mb-6 mulish">
           Login To Your Account
         </h2>
-
+        <button
+          onClick={handleGoogleSignUp}
+          class=" cursor-pointer w-full flex items-center justify-center gap-3 bg-white border border-gray-300 py-2 rounded-xl hover:bg-gray-100 transform hover:-translate-y-1 transition duration-300"
+        >
+          <img
+            src="https://www.svgrepo.com/show/475656/google-color.svg"
+            alt="Google"
+            class="w-5 h-5"
+          />
+          <span class="text-sm font-medium mulish text-gray-700 ">
+            Continue with Google
+          </span>
+        </button>
         {/* <!-- Google Login --> */}
         <form onSubmit={handleSubmit}>
           {" "}
-          <button
-            onClick={handleGoogleSignUp}
-            class=" cursor-pointer w-full flex items-center justify-center gap-3 bg-white border border-gray-300 py-2 rounded-xl hover:bg-gray-100 transform hover:-translate-y-1 transition duration-300"
-          >
-            <img
-              src="https://www.svgrepo.com/show/475656/google-color.svg"
-              alt="Google"
-              class="w-5 h-5"
-            />
-            <span class="text-sm font-medium mulish text-gray-700 ">
-              Continue with Google
-            </span>
-          </button>
           <div class="my-6 flex items-center">
             <hr class="flex-grow border-gray-300" />
             <span class="px-4 text-gray-500 text-sm">or</span>
