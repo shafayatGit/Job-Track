@@ -28,12 +28,10 @@ const SignUp = () => {
 
   const handleGoogleSignUp = () => {
     // console.log("google");
-
     signInWithPopup(auth, provider)
       .then((result) => {
         setUser(result.user);
         navigate("/");
-
         console.log(result);
       })
       .catch((error) => console.log(error));

@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router";
 import ThemeToggle from "./ThemeToggle";
-// import { valueContext } from "../MainLayout/MainLayout";
-import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "./AuthContext";
 // import { AuthContext } from "../Provider/AuthProvider";
 
