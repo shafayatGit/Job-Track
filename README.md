@@ -4,7 +4,7 @@
 
 ## 🚀 Live Demo
 
-🔗 [Visit JobTrack Website](https://job-track-as9.netlify.app/)
+🔗 [Visit JobTrack Website](https://job-track-domain.netlify.app/)
 
 ---
 
