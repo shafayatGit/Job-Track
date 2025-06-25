@@ -71,4 +71,4 @@ Follow the steps below to run this project on your local machine:
 ### 📦 Clone the Repository
 
 ```bash
-[git clone https://github.com/your-username/your-repo-name.git](https://github.com/shafayatGit/Job-Track.git)
+[git clone https://github.com/shafayatGit/Job-Track.git]
